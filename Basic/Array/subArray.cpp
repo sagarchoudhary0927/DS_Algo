@@ -35,8 +35,7 @@ void printSubArraySumBruteForce(int *arr, int size)
     }
 }
 
-
-// Brute force 
+// Brute force
 void printBiggestSumSubArray(int *arr, int size)
 {
     int subArrayStartingIdx = 0;
@@ -51,7 +50,7 @@ void printBiggestSumSubArray(int *arr, int size)
             {
                 currentSubArraySum += arr[k];
             }
-            cout << "currentSubArraySum -> " << currentSubArraySum<< endl;
+            cout << "currentSubArraySum -> " << currentSubArraySum << endl;
             if (currentSubArraySum > sum)
             {
                 subArrayStartingIdx = i;
@@ -70,9 +69,25 @@ void printBiggestSumSubArray(int *arr, int size)
     cout << ")";
 }
 
+void printLargestSubarrySumUsingPrefixSum(int *arr, int size)
+{
+    int finalSum = 0;
+    int curSubArraySum = 0;
+    for (int i = 0; i < size; i++)
+    {
+        curSubArraySum = arr[i];
+        for (int j = i + 1; j < size; j++)
+        {
+            curSubArraySum += arr[j];
+        }
+        finalSum = max(finalSum, curSubArraySum);
+    }
+    cout << "Largest Sum should be -> " << finalSum;
+}
+
 int main()
 {
-    int arr[] = {-40, 20, 0, 10, 80, 60};
+    int arr[] = {30, -10, 0, 10, 80, 60};
     int size = sizeof(arr) / sizeof(int);
 
     // printAllSubArray(arr, size); // Time complexity is O(n^3)
@@ -80,7 +95,9 @@ int main()
 
     // printSubArraySumBruteForce(arr, size);
 
-    printBiggestSumSubArray(arr, size); // With brute force
+    // printBiggestSumSubArray(arr, size); // With brute force
+
+    printLargestSubarrySumUsingPrefixSum(arr, size);
 
     return 0;
 }
