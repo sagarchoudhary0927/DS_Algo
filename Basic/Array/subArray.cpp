@@ -88,6 +88,22 @@ void printLargestSubarrySumUsingPrefixSum(int *arr, int size)
 
 void prefixSumSubarray(int *arr, int size)
 {
+    int prefixSumArr[100] = {0};
+    prefixSumArr[0] = arr[0];
+    for (int i = 1; i < size; i++)
+    {
+        prefixSumArr[i] = arr[i] + prefixSumArr[i - 1];
+    }
+    int largestSum = 0;
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = i; j < size; j++)
+        {
+            int subArraySum = i > 0 ? prefixSumArr[j] - prefixSumArr[i - 1] : prefixSumArr[j];
+            largestSum = max(largestSum, subArraySum);
+        }
+    }
+    cout << "Largest Subarray sum is -> " << largestSum;
 }
 
 int main()
@@ -103,6 +119,7 @@ int main()
     // printBiggestSumSubArray(arr, size); // With brute force
 
     printLargestSubarrySumUsingPrefixSum(arr, size);
+    cout << endl;
 
     prefixSumSubarray(arr, size);
 
