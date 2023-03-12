@@ -106,6 +106,17 @@ void prefixSumSubarray(int *arr, int size)
     cout << "Largest Subarray sum is -> " << largestSum;
 }
 
+void kadeneAlgo(int *arr, int size)
+{
+    int currSum = 0;
+    int maxSum = INT_MIN;
+    for (int i = 0; i < size; i++) {
+        currSum = currSum + arr[i];
+        maxSum = max(maxSum, currSum);
+    }
+    cout << maxSum;
+}
+
 int main()
 {
     int arr[] = {30, -10, 0, 10, 80, 60};
@@ -118,10 +129,12 @@ int main()
 
     // printBiggestSumSubArray(arr, size); // With brute force
 
-    printLargestSubarrySumUsingPrefixSum(arr, size);
-    cout << endl;
+    // printLargestSubarrySumUsingPrefixSum(arr, size);
+    // cout << endl;
 
-    prefixSumSubarray(arr, size);
+    // prefixSumSubarray(arr, size);
+
+    kadeneAlgo(arr, size); // Time complexity is O(n) and space complexity can be O(n) and O(1) as well
 
     return 0;
 }
