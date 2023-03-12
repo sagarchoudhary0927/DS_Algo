@@ -69,7 +69,7 @@ void printBiggestSumSubArray(int *arr, int size)
     cout << ")";
 }
 
-// time complexity will be O(n^2) at max the loop will traverse n^2 times
+// time complexity will be O(n^2) at max the loop will traverse n^2 times and space complexity O(1)
 void printLargestSubarrySumUsingPrefixSum(int *arr, int size)
 {
     int finalSum = 0;
@@ -86,6 +86,10 @@ void printLargestSubarrySumUsingPrefixSum(int *arr, int size)
     cout << "Largest Sum should be -> " << finalSum;
 }
 
+void prefixSumSubarray(int *arr, int size)
+{
+}
+
 int main()
 {
     int arr[] = {30, -10, 0, 10, 80, 60};
@@ -99,6 +103,8 @@ int main()
     // printBiggestSumSubArray(arr, size); // With brute force
 
     printLargestSubarrySumUsingPrefixSum(arr, size);
+
+    prefixSumSubarray(arr, size);
 
     return 0;
 }
