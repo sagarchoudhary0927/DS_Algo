@@ -69,6 +69,7 @@ void printBiggestSumSubArray(int *arr, int size)
     cout << ")";
 }
 
+// time complexity will be O(n^2) at max the loop will traverse n^2 times
 void printLargestSubarrySumUsingPrefixSum(int *arr, int size)
 {
     int finalSum = 0;
