@@ -15,7 +15,7 @@ int main()
     int ar[] = {5, 4, 1, 2, 3, -60};
     int size = sizeof(ar) / sizeof(int);
     sort(ar, ar + size);
-
+    reverse(ar, ar + size);
     for (int x : ar)
     {
         cout << x << " ";
