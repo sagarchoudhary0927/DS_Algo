@@ -19,7 +19,9 @@ int main()
 
     int ar[] = {5, 4, 1, 2, 3, -60};
     int size = sizeof(ar) / sizeof(int);
-    sort(ar, ar + size, compare);
+    // sort(ar, ar + size, compare);
+    sort(ar, ar + size, greater<int>()); // This gives inbuild comaprator and sort arrtay in ascending order 
+
     // reverse(ar, ar + size);
     for (int x : ar)
     {
