@@ -112,6 +112,7 @@ void kadeneAlgo(int *arr, int size)
     int maxSum = INT_MIN;
     for (int i = 0; i < size; i++) {
         currSum = currSum + arr[i];
+        currSum = currSum < 0 ? 0 : currSum;
         maxSum = max(maxSum, currSum);
     }
     cout << maxSum;
@@ -119,7 +120,7 @@ void kadeneAlgo(int *arr, int size)
 
 int main()
 {
-    int arr[] = {30, -10, 0, 10, 80, 60};
+    int arr[] = {5, 0, -1, 0, 1, 2, -1};
     int size = sizeof(arr) / sizeof(int);
 
     // printAllSubArray(arr, size); // Time complexity is O(n^3)
