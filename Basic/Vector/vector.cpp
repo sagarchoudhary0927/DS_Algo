@@ -17,5 +17,20 @@ int main()
     cout << arr1.size() << " " << arr1.capacity() << endl; // Size gives size of vector capacity gives tghe exact capacity of the vectop
     arr1.push_back(4);
     cout << arr1.size() << " " << arr1.capacity() << endl; // Here The size will be 6 and the capacity will be 6 as the initial size was 3 and now we try to add one more ele,nt at the back of vector so it will double its size first then copies the all elements of samller size vector and paste it in the new double size created vector
+    
+    vector<int> arr2(10, 7); // This means arr2 will be of size 10 and its all values will be 9
+    // vector<int> arr2(size, values)
+
+    for(int i = 0 ; i < arr2.size(); i++) {
+        cout<< arr2[i]<< " ";
+    }
+    cout<<endl;
+
+    // we also have pop_back function as well
+    arr2.pop_back();
+    for(int i = 0 ; i < arr2.size(); i++) {
+        cout<< arr2[i]<< " ";
+    }
+    cout<<endl;
     return 0;
 }
