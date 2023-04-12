@@ -2,6 +2,17 @@
 #include <vector>
 using namespace std;
 
+void printArr(vector<vector<int>> matrix) {
+    for(int i = 0; i < matrix.size(); i++) {
+        for(int j= 0 ; j < matrix.size(); j++) {
+            cout<< matrix[i][j] << " ";
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+}
+
+
 void rotate(vector<vector<int>>& matrix) {
         int n = matrix.size();
         int a = 0;
@@ -11,22 +22,11 @@ void rotate(vector<vector<int>>& matrix) {
                 swap(matrix[a][a+i], matrix[a+i][b]);
                 swap(matrix[a][a+i], matrix[b][b-i]);
                 swap(matrix[a][a+i], matrix[b-i][a]);
+                printArr(matrix);
             }
-
-            for(int i = 0 ; i < matrix.size(); i++) {
-                for(int x: matrix[i]) {
-                    cout<< x<< " ";
-                }
-                cout<<endl;
-            }
-            cout<<endl;
-            cout<<a <<"_"<< b<<endl;
             ++a;
             --b;
-                cout<<a <<"_"<< b<<endl;
         }
-          cout<<endl;
-            cout<<endl;
 }
 
 int main() {
